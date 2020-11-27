@@ -14,4 +14,14 @@
       <servlet-name>first</servlet-name>
       <url-pattern>/web</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+      <servlet-name>second</servlet-name>
+      <servlet-class>com.servlets.SecondServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>second</servlet-name>
+      <url-pattern>/second</url-pattern>
+  </servlet-mapping>
 </web-app>
