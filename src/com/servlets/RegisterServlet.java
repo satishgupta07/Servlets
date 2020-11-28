@@ -29,6 +29,16 @@ public class RegisterServlet extends HttpServlet {
 				out.println("<h2>Gender : "+gender+"</h2>");
 				out.println("<h2>Course : "+course+"</h2>");
 				
+				//
+				//JDBC
+				//
+				
+				//saved to db
+				//            ....
+				
+				RequestDispatcher rd = req.getRequestDispatcher("success");
+				rd.forward(req, res);
+				
 			}
 			else {
 				out.println("<h2>You have not accepted the terms and conditions </h2>");
@@ -36,6 +46,15 @@ public class RegisterServlet extends HttpServlet {
 		}
 		else {
 			out.println("<h2>You have not accepted the terms and conditions </h2>");
+			
+			//i want to include output of index.html
+			
+			//get the object of RequestDispatcher
+			
+			RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
+			
+			//include
+			rd.include(req, res);
 		}
 	
 	}
