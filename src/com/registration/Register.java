@@ -30,12 +30,10 @@ public class Register extends HttpServlet {
 		String email = request.getParameter("user_email");
 		String password = request.getParameter("user_password");
 		
-		out.println(name);
-		out.println(email);
-		out.println(password);
-		
 		//connection.................
 		try {
+			
+			Thread.sleep(3000);
 			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servletandjsp","root","root");
@@ -50,12 +48,12 @@ public class Register extends HttpServlet {
 			
 			pstmt.executeUpdate();
 			
-			out.println("done.............");
+			out.println("done");
 			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			out.println("error............");
+			out.println("error");
 		}
 		
 	}
