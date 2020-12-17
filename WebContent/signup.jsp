@@ -27,7 +27,16 @@
 							<form action="Register" method="post" id="myform">
 								<input type="text" name="user_name" placeholder="Enter UserName">
 								<input type="email" name="user_email" placeholder="Enter Email ID">
-								<input type="password" name="user_password" placeholder="Enter Passeord">
+								<input type="password" name="user_password" placeholder="Enter Password">
+								 <div class="file-field input-field">
+								      <div class="btn">
+								        <span>File</span>
+								        <input name="image" type="file">
+								      </div>
+								      <div class="file-path-wrapper">
+								        <input class="file-path validate" type="text">
+								      </div>
+								    </div>
 								<button type="submit" class="btn">Submit</button>
 							</form>
 						</div>
@@ -91,7 +100,9 @@
 			$("#myform").on('submit',function(event) {
 				event.preventDefault();
 				
-				var f = $(this).serialize();
+		/* 		var f = $(this).serialize(); */
+		        
+				let f = new FormData(this);
 				
 				console.log(f);
 				
@@ -124,7 +135,9 @@
 						$(".form").show();
 						$("#msg").html("Something went wrong on server... !!")
 						$("#msg").addClass('red-text')
-					}
+					},
+					processData: false,
+					contentType: false
 				})
 			})
 		})
