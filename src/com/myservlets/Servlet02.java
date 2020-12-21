@@ -23,7 +23,7 @@ public class Servlet02 extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<h1 style='color:green;'>Welcome to Servlet02</h1>");
 		
-		String name = request.getParameter("user");
+		String name = request.getParameter("user_name");
 		out.println("<h1 style='color:red;'>Welcome back "+name+"</h1>");
 	}
 
